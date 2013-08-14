@@ -1,17 +1,17 @@
-﻿using System.Linq;
-
-namespace CrowdSourcedNews.Repositories
+﻿namespace CrowdSourcedNews.Repositories
 {
+    using System.Linq;
+
     public interface IRepository<T> where T : class
     {
-        IQueryable<T> All();
-
         T Get(int id);
 
-        void Add(T item);
+        IQueryable<T> GetAll();
 
-        void Delete(int id);
+        T Add(T item);
 
-        void Update(int id, T item);
+        T Update(int id, T item);
+
+        bool Delete(int id);
     }
 }

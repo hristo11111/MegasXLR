@@ -1,8 +1,8 @@
-﻿using System.Data.Entity;
-using System.Linq;
-
-namespace CrowdSourcedNews.Repositories
+﻿namespace CrowdSourcedNews.Repositories
 {
+    using System.Data.Entity;
+    using System.Linq;
+
     public class DbRepository<T> : IRepository<T> where T : class
     {
         private readonly DbContext context;
