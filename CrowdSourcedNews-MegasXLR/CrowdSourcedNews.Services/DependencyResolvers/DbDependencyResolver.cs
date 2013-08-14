@@ -11,16 +11,16 @@
     public class DbDependencyResolver : IDependencyResolver
     {
         private DbContext context;
+        private DbUsersRepository usersRepository;
         private IRepository<NewsArticle> newsArticlesRepository;
         private IRepository<Comment> commentsRepository;
-        private DbUsersRepository usersRepository;
 
         public DbDependencyResolver(DbContext context)
         {
             this.context = context;
+            this.usersRepository = new DbUsersRepository(context);
             this.newsArticlesRepository = new DbRepository<NewsArticle>(context);
             this.commentsRepository = new DbRepository<Comment>(context);
-            this.usersRepository = new DbUsersRepository(context);
         }
 
         public IDependencyScope BeginScope()
@@ -32,7 +32,8 @@
         {
             if (serviceType == typeof(UsersController))
             {
-                return new UsersController(usersRepository, newsArticlesRepository, commentsRepository);
+                return new UsersController(
+                    usersRepository, newsArticlesRepository, commentsRepository);
             }
             else if (serviceType == typeof(NewsArticlesController))
             {

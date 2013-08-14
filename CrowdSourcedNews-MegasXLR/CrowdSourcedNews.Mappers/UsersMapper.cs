@@ -26,7 +26,7 @@
         {
             User userEntity = new User()
                 {
-                    Username = userModel.Username,
+                    Username = userModel.Username.ToLower(),
                     AuthCode = userModel.AuthCode,
                     Nickname = userModel.Nickname
                 };
