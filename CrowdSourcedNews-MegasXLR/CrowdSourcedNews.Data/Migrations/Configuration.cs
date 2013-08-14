@@ -6,7 +6,7 @@ namespace CrowdSourcedNews.Data.Migrations
     using System.Linq;
 
     public sealed class Configuration : DbMigrationsConfiguration<CrowdSourcedNews.Data.CrowdSourcedNewsContext>
-    {
+    { 
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
