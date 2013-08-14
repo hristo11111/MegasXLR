@@ -18,3 +18,5 @@ C:\Users\Hristo\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourced
 C:\Users\Hristo\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Data\obj\Debug\CrowdSourcedNews.Data.csprojResolveAssemblyReference.cache
 C:\Users\Hristo\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Data\obj\Debug\CrowdSourcedNews.Data.dll
 C:\Users\Hristo\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Data\obj\Debug\CrowdSourcedNews.Data.pdb
+C:\Users\Hristo\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Data\obj\Debug\CrowdSourcedNews.Data.Migrations.InitialCreate.resources
+C:\Users\Hristo\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Data\obj\Debug\CrowdSourcedNews.Data.csproj.GenerateResource.Cache
