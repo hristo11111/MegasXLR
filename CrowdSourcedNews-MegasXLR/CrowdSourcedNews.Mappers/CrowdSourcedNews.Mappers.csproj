@@ -39,8 +39,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommentsMapper.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="NewsArticlesMapper.cs" />
     <Compile Include="UsersMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CrowdSourcedNews.DataTransferObjects\CrowdSourcedNews.DataTransferObjects.csproj">
+      <Project>{10ae6e9b-91c9-4452-855f-0768e7fbd768}</Project>
+      <Name>CrowdSourcedNews.DataTransferObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CrowdSourcedNews.Models\CrowdSourcedNews.Models.csproj">
+      <Project>{d5eb71b7-992e-4dfc-9fe4-219fea0439de}</Project>
+      <Name>CrowdSourcedNews.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CrowdSourcedNews.Repositories\CrowdSourcedNews.Repositories.csproj">
+      <Project>{63be37d3-12e1-4b41-a3a0-3010d7fb5b6f}</Project>
+      <Name>CrowdSourcedNews.Repositories</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

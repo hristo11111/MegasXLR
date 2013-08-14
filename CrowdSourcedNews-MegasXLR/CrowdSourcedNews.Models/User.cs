@@ -27,7 +27,6 @@
         [Required]
         public string AuthCode { get; set; }
 
-        [Required]
         public string SessionKey { get; set; }
 
         public virtual ICollection<NewsArticle> NewsArticles
@@ -35,13 +34,6 @@
             get { return this.newsArticles; }
 
             set { this.newsArticles = value; }
-        }
-
-        public virtual ICollection<Comment> Comments
-        {
-            get { return this.comments; }
-
-            set { this.comments = value; }
         }
     }
 }

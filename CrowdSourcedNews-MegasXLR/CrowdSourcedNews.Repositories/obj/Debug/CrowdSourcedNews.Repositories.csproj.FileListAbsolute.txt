@@ -6,6 +6,10 @@ C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSour
 C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Repositories\bin\Debug\EntityFramework.dll
 C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Repositories\bin\Debug\EntityFramework.xml
 C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Repositories\obj\Debug\CrowdSourcedNews.Repositories.csprojResolveAssemblyReference.cache
+<<<<<<< HEAD
+C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Repositories\bin\Debug\CrowdSourcedNews.Models.dll
+C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Repositories\bin\Debug\CrowdSourcedNews.Models.pdb
+=======
 C:\Users\Hristo\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Repositories\bin\Debug\CrowdSourcedNews.Repositories.dll.config
 C:\Users\Hristo\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Repositories\bin\Debug\CrowdSourcedNews.Repositories.dll
 C:\Users\Hristo\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Repositories\bin\Debug\CrowdSourcedNews.Repositories.pdb
@@ -13,3 +17,4 @@ C:\Users\Hristo\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourced
 C:\Users\Hristo\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Repositories\bin\Debug\EntityFramework.xml
 C:\Users\Hristo\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Repositories\obj\Debug\CrowdSourcedNews.Repositories.dll
 C:\Users\Hristo\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Repositories\obj\Debug\CrowdSourcedNews.Repositories.pdb
+>>>>>>> 5987d5d7ce39eefff61a95a248417c569fbcf78a
