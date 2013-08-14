@@ -6,19 +6,12 @@
     [DataContract]
     public class CommentModel : CommentDetails
     {
-        private ICollection<CommentDetails> comments;
-
         public CommentModel()
         {
-            this.comments = new List<CommentDetails>();
+            this.Comments = new List<CommentDetails>();
         }
 
         [DataMember(Name = "comments")]
-        public ICollection<CommentDetails> Comments
-        {
-            get { return this.comments; }
-
-            set { this.comments = value; }
-        }
+        public ICollection<CommentDetails> Comments { get; set; }
     }
 }

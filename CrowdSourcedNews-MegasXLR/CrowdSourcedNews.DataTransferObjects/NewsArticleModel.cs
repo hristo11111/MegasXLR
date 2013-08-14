@@ -7,13 +7,10 @@
     [DataContract]
     public class NewsArticleModel
     {
-        private ICollection<byte[]> images;
-        private ICollection<CommentDetails> comments;
-
         public NewsArticleModel()
         {
-            this.images = new HashSet<byte[]>();
-            this.comments = new HashSet<CommentDetails>();
+            this.Images = new HashSet<string>();
+            this.Comments = new HashSet<CommentDetails>();
         }
 
         [DataMember(Name = "id")]
@@ -35,19 +32,9 @@
         public int Rating { get; set; }
 
         [DataMember(Name = "images")]
-        public ICollection<byte[]> Images
-        {
-            get { return this.images; }
-
-            set { this.images = value; }
-        }
+        public ICollection<string> Images { get; set; }
 
         [DataMember(Name = "comments")]
-        public ICollection<CommentDetails> Comments
-        {
-            get { return this.comments; }
-
-            set { this.comments = value; }
-        }
+        public ICollection<CommentDetails> Comments { get; set; }
     }
 }

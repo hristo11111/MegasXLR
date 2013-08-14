@@ -12,6 +12,7 @@
         public NewsArticle()
         {
             this.comments = new HashSet<Comment>();
+            this.Images = new HashSet<string>();
         }
 
         [Key, Column("NewsArticleID")]
@@ -32,7 +33,7 @@
 
         public int Rating { get; set; }
 
-        public ICollection<byte[]> Images { get; set; }
+        public ICollection<string> Images { get; set; }
 
         public virtual ICollection<Comment> Comments
         {

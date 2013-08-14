@@ -6,14 +6,10 @@
     [DataContract]
     public class UserModel
     {
-        private ICollection<NewsArticleModel> newsArticles;
-
-        private ICollection<CommentDetails> comments;
-
         public UserModel()
         {
-            this.newsArticles = new HashSet<NewsArticleModel>();
-            this.comments = new HashSet<CommentDetails>();
+            this.NewsArticles = new HashSet<NewsArticleModel>();
+            this.Comments = new HashSet<CommentDetails>();
         }
 
         [DataMember(Name = "id")]
@@ -23,19 +19,9 @@
         public string Nickname { get; set; }
 
         [DataMember(Name = "newsArticles")]
-        public ICollection<NewsArticleModel> NewsArticles
-        {
-            get { return this.newsArticles; }
-
-            set { this.newsArticles = value; }
-        }
+        public ICollection<NewsArticleModel> NewsArticles { get; set; }
 
         [DataMember(Name = "comments")]
-        public ICollection<CommentDetails> Comments
-        {
-            get { return this.comments; }
-
-            set { this.comments = value; }
-        }
+        public ICollection<CommentDetails> Comments { get; set; }
     }
 }
