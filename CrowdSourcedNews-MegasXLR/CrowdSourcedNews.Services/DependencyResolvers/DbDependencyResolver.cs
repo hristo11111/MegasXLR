@@ -1,12 +1,12 @@
 ﻿namespace CrowdSourcedNews.Services.DependencyResolvers
 {
-    using CrowdSourcedNews.Models;
-    using CrowdSourcedNews.Repositories;
-    using CrowdSourcedNews.Services.Controllers;
     using System;
     using System.Collections.Generic;
     using System.Data.Entity;
     using System.Web.Http.Dependencies;
+    using CrowdSourcedNews.Models;
+    using CrowdSourcedNews.Repositories;
+    using CrowdSourcedNews.Services.Controllers;
 
     public class DbDependencyResolver : IDependencyResolver
     {
@@ -32,7 +32,7 @@
         {
             if (serviceType == typeof(UsersController))
             {
-                return new UsersController(usersRepository);
+                return new UsersController(usersRepository, newsArticlesRepository, commentsRepository);
             }
             else if (serviceType == typeof(NewsArticlesController))
             {

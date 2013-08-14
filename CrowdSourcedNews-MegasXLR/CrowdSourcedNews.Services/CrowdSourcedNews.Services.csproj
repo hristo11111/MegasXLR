@@ -297,6 +297,10 @@
       <Project>{5b021cb8-dd15-4d43-80e4-39dd4a96b643}</Project>
       <Name>CrowdSourcedNews.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CrowdSourcedNews.Mappers\CrowdSourcedNews.Mappers.csproj">
+      <Project>{7d41a199-0be8-4686-a92d-395b8d3ddbbf}</Project>
+      <Name>CrowdSourcedNews.Mappers</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CrowdSourcedNews.Models\CrowdSourcedNews.Models.csproj">
       <Project>{D5EB71B7-992E-4DFC-9FE4-219FEA0439DE}</Project>
       <Name>CrowdSourcedNews.Models</Name>

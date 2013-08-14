@@ -147,3 +147,5 @@ C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSour
 C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Services\bin\CrowdSourcedNews.Data.pdb
 C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Services\bin\CrowdSourcedNews.Models.pdb
 C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Services\bin\CrowdSourcedNews.Repositories.pdb
+C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Services\bin\CrowdSourcedNews.Mappers.dll
+C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Services\bin\CrowdSourcedNews.Mappers.pdb

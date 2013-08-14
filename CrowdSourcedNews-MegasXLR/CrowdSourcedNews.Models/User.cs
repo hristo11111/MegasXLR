@@ -35,5 +35,12 @@
 
             set { this.newsArticles = value; }
         }
+
+        public virtual ICollection<Comment> Comments
+        {
+            get { return this.comments; }
+
+            set { this.comments = value; }
+        }
     }
 }

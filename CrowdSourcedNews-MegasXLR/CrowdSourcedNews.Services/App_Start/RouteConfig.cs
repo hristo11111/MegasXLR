@@ -14,7 +14,7 @@ namespace CrowdSourcedNews.Services
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "Default",
+                name: "SpecifiedApi",
                 url: "api/{controller}/{action}/{sessionKey}",
                 defaults: new { sessionKey = UrlParameter.Optional }
             );

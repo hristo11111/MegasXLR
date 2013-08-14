@@ -8,6 +8,9 @@
         [DataMember(Name = "id")]
         public int ID { get; set; }
 
+        [DataMember(Name = "articleTitle")]
+        public string ArticleTitle { get; set; }
+
         [DataMember(Name = "content")]
         public string Content { get; set; }
 
