@@ -29,3 +29,5 @@ _ReSharper*/
 [Tt]est[Rr]esult*
 CrowdSourcedNews-MegasXLR/CrowdSourcedNews.Repositories/CrowdSourcedNews.Repositories.csproj
 CrowdSourcedNews-MegasXLR/CrowdSourcedNews-MegasXLR.v11.suo
+*.dll
+CrowdSourcedNews-MegasXLR/CrowdSourcedNews.Services/bin/CrowdSourcedNews.DataTransferObjects.dll
