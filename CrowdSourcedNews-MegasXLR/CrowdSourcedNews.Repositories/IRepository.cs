@@ -4,14 +4,14 @@ namespace CrowdSourcedNews.Repositories
 {
     public interface IRepository<T> where T : class
     {
-        IQueryable<T> GetAll();
+        IQueryable<T> All();
 
         T Get(int id);
 
-        T Add(T item);
+        void Add(T item);
 
-        T Delete(int id);
+        void Delete(int id);
 
-        bool Update(int id, T item);
+        void Update(int id, T item);
     }
 }

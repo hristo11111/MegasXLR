@@ -23,16 +23,16 @@
         [Required]
         public string Content { get; set; }
 
+        public int AuthorID { get; set; }
+
+        [Required, ForeignKey("AuthorID")]
+        public User Author { get; set; }
+
         public DateTime Date { get; set; }
 
         public int Rating { get; set; }
 
         public ICollection<byte[]> Images { get; set; }
-
-        public int AuthorID { get; set; }
-
-        [Required, ForeignKey("AuthorID")]
-        public User Author { get; set; }
 
         public virtual ICollection<Comment> Comments
         {
