@@ -3,3 +3,8 @@ C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSour
 C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Models\obj\Debug\CrowdSourcedNews.Models.csprojResolveAssemblyReference.cache
 C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Models\obj\Debug\CrowdSourcedNews.Models.dll
 C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Models\obj\Debug\CrowdSourcedNews.Models.pdb
+E:\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Models\bin\Debug\CrowdSourcedNews.Models.dll
+E:\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Models\bin\Debug\CrowdSourcedNews.Models.pdb
+E:\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Models\obj\Debug\CrowdSourcedNews.Models.csprojResolveAssemblyReference.cache
+E:\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Models\obj\Debug\CrowdSourcedNews.Models.dll
+E:\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Models\obj\Debug\CrowdSourcedNews.Models.pdb

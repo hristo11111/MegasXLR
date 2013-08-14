@@ -161,7 +161,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -286,6 +286,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CrowdSourcedNews.DataTransferObjects\CrowdSourcedNews.DataTransferObjects.csproj">
+      <Project>{10AE6E9B-91C9-4452-855F-0768E7FBD768}</Project>
+      <Name>CrowdSourcedNews.DataTransferObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CrowdSourcedNews.Models\CrowdSourcedNews.Models.csproj">
+      <Project>{D5EB71B7-992E-4DFC-9FE4-219FEA0439DE}</Project>
+      <Name>CrowdSourcedNews.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CrowdSourcedNews.Repositories\CrowdSourcedNews.Repositories.csproj">
+      <Project>{63BE37D3-12E1-4B41-A3A0-3010D7FB5B6F}</Project>
+      <Name>CrowdSourcedNews.Repositories</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
