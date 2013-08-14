@@ -22,6 +22,11 @@
         [Required, ForeignKey("AuthorID")]
         public User Author { get; set; }
 
+        public int NewsArticleID { get; set; }
+
+        [Required, ForeignKey("NewsArticleID")]
+        public NewsArticle NewsArticle { get; set; }
+
         [Required]
         public string Content { get; set; }
 
