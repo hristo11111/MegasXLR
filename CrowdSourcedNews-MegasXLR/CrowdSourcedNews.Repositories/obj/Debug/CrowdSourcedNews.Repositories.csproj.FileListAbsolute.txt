@@ -11,6 +11,5 @@ C:\Users\Hristo\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourced
 C:\Users\Hristo\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Repositories\bin\Debug\CrowdSourcedNews.Repositories.pdb
 C:\Users\Hristo\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Repositories\bin\Debug\EntityFramework.dll
 C:\Users\Hristo\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Repositories\bin\Debug\EntityFramework.xml
-C:\Users\Hristo\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Repositories\obj\Debug\CrowdSourcedNews.Repositories.csprojResolveAssemblyReference.cache
 C:\Users\Hristo\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Repositories\obj\Debug\CrowdSourcedNews.Repositories.dll
 C:\Users\Hristo\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Repositories\obj\Debug\CrowdSourcedNews.Repositories.pdb
