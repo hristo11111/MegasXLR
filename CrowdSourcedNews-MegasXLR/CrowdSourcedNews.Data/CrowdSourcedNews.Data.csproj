@@ -45,10 +45,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CrowdSourcedNewsContext.cs" />
-    <Compile Include="Migrations\201308141318562_InitialCreate.cs" />
-    <Compile Include="Migrations\201308141318562_InitialCreate.Designer.cs">
-      <DependentUpon>201308141318562_InitialCreate.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -61,11 +57,6 @@
       <Project>{d5eb71b7-992e-4dfc-9fe4-219fea0439de}</Project>
       <Name>CrowdSourcedNews.Models</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201308141318562_InitialCreate.resx">
-      <DependentUpon>201308141318562_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

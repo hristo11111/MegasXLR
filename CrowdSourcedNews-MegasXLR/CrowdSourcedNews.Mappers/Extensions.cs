@@ -8,8 +8,8 @@
     {
         public static Comment CreateOrLoadComment(
             CommentModel comment,
-            DbUsersRepository usersRepository,
-            IRepository<Comment> commentRepository)
+            IRepository<Comment> commentRepository,
+            DbUsersRepository usersRepository)
         {
             Comment commentEntity = commentRepository.Get(comment.ID);
             if (commentEntity != null)

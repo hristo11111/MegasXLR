@@ -6,6 +6,8 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using CrowdSourcedNews.Data;
+using CrowdSourcedNews.Services.DependencyResolvers;
 
 namespace CrowdSourcedNews.Services
 {
@@ -22,6 +24,9 @@ namespace CrowdSourcedNews.Services
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            CrowdSourcedNewsContext context = new CrowdSourcedNewsContext();
+            GlobalConfiguration.Configuration.DependencyResolver = new DbDependencyResolver(context);
         }
     }
 }

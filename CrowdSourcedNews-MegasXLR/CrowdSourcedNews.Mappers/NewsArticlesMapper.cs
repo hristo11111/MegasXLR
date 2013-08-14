@@ -25,7 +25,7 @@
             foreach (CommentModel comment in newsArticleModel.Comments)
             {
                 newsArticleEntity.Comments.Add(
-                    Extensions.CreateOrLoadComment(comment, usersRepository, commentsRepository));
+                    Extensions.CreateOrLoadComment(comment, commentsRepository, usersRepository));
             }
 
             return newsArticleEntity;

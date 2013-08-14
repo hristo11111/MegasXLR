@@ -1,9 +1,5 @@
 C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Mappers\bin\Debug\CrowdSourcedNews.Mappers.dll
 C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Mappers\bin\Debug\CrowdSourcedNews.Mappers.pdb
-C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Mappers\obj\Debug\CrowdSourcedNews.Mappers.csprojResolveAssemblyReference.cache
-C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Mappers\obj\Debug\CrowdSourcedNews.Mappers.dll
-C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Mappers\obj\Debug\CrowdSourcedNews.Mappers.pdb
-<<<<<<< HEAD
 C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Mappers\bin\Debug\CrowdSourcedNews.DataTransferObjects.dll
 C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Mappers\bin\Debug\CrowdSourcedNews.Models.dll
 C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Mappers\bin\Debug\CrowdSourcedNews.Repositories.dll
@@ -12,9 +8,6 @@ C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSour
 C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Mappers\bin\Debug\CrowdSourcedNews.Models.pdb
 C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Mappers\bin\Debug\CrowdSourcedNews.Repositories.pdb
 C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Mappers\bin\Debug\EntityFramework.xml
-=======
-C:\Users\Hristo\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Mappers\bin\Debug\CrowdSourcedNews.Mappers.dll
-C:\Users\Hristo\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Mappers\bin\Debug\CrowdSourcedNews.Mappers.pdb
-C:\Users\Hristo\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Mappers\obj\Debug\CrowdSourcedNews.Mappers.dll
-C:\Users\Hristo\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Mappers\obj\Debug\CrowdSourcedNews.Mappers.pdb
->>>>>>> 5987d5d7ce39eefff61a95a248417c569fbcf78a
+C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Mappers\obj\Debug\CrowdSourcedNews.Mappers.csprojResolveAssemblyReference.cache
+C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Mappers\obj\Debug\CrowdSourcedNews.Mappers.dll
+C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Mappers\obj\Debug\CrowdSourcedNews.Mappers.pdb

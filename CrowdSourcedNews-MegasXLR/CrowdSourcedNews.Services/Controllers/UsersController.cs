@@ -1,12 +1,25 @@
 ﻿namespace CrowdSourcedNews.Services.Controllers
 {
+    using System;
+    using System.Net.Http;
     using System.Web.Http;
+    using CrowdSourcedNews.DataTransferObjects;
+    using CrowdSourcedNews.Models;
+    using CrowdSourcedNews.Repositories;
 
     public class UsersController : ApiController
     {
-        // Register -> creates user and add to DB + Login == add and return sessionKey
-        // Login -> gets from db + returns session key == get and return sessionKey
-        // Logout -> removes the sessionKey of the user from the database == update
-        // GetAllUsers -> ...
+        private DbUsersRepository usersRepository;
+
+        public UsersController(DbUsersRepository repository)
+        {
+            this.usersRepository = repository;
+        }
+
+        [HttpPost]
+        public HttpResponseMessage RegisterUser(UserRegisterModel user)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
