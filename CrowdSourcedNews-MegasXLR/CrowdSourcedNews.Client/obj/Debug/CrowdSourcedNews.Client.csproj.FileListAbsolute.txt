@@ -1,0 +1,5 @@
+C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Client\bin\CrowdSourcedNews.Client.dll
+C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Client\bin\CrowdSourcedNews.Client.pdb
+C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Client\obj\Debug\CrowdSourcedNews.Client.csprojResolveAssemblyReference.cache
+C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Client\obj\Debug\CrowdSourcedNews.Client.dll
+C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Client\obj\Debug\CrowdSourcedNews.Client.pdb

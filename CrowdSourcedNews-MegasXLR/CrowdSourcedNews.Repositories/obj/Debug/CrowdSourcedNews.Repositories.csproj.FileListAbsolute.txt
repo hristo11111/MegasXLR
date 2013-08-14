@@ -1,0 +1,4 @@
+C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Repositories\bin\Debug\CrowdSourcedNews.Repositories.dll
+C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Repositories\bin\Debug\CrowdSourcedNews.Repositories.pdb
+C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Repositories\obj\Debug\CrowdSourcedNews.Repositories.dll
+C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Repositories\obj\Debug\CrowdSourcedNews.Repositories.pdb
