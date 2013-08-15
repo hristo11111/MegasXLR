@@ -19,20 +19,9 @@
                 true                                                        // SSL_ON?
             );
 
-        public static void SendJsonMessage(string messageType, Object obj)
+        public static void Send(string message)
         {
-            string message = CreateNewJsonMessage(messageType, obj);
-
             pubnub.Publish(channel, message);
-        }
-
-        private static string CreateNewJsonMessage(string messageType, Object obj)
-        {
-            JavaScriptSerializer serializer = new JavaScriptSerializer();
-
-            string message = @"{""msgType"": """ + messageType + @""", ""newsArticle"":" + serializer.Serialize(obj) + "}";
-
-            return message;
         }
     }
 }

@@ -69,7 +69,7 @@
 
             this.newsArticlesRepository.Add(newsArticleEntity);
 
-            PubNubSender.SendJsonMessage("ARTICLE_ADDED", newsArticle);
+            PubNubSender.Send(newsArticle.Title);
 
             return Request.CreateResponse(HttpStatusCode.Created, newsArticle);
         }
@@ -174,11 +174,14 @@
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Invalid news article model provided!");
             }
 
-            // UPDATE IMAGES
+            if (HttpContext.Current.Request.Files.Count != 0)
+            {
+                string imageUrl = this.GetImageUrl(HttpContext.Current.Request.Files[0]);
+                updatedNewsArticle.ImageUrl = imageUrl;
+                newsArticle.ImageUrl = imageUrl;
+            }
 
             this.newsArticlesRepository.Update(id, updatedNewsArticle);
-
-            PubNubSender.SendJsonMessage("ARTICLE_EDITED", newsArticle);
 
             return Request.CreateResponse(HttpStatusCode.OK);
         }
