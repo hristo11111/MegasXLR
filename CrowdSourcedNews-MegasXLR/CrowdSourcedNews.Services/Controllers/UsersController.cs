@@ -125,8 +125,8 @@
 
             ICollection<NewsArticleModel> newsArticlesModels = new List<NewsArticleModel>();
 
-            IQueryable<NewsArticle> newsArticles = this.newsArticlesRepository
-                .GetAll().Where(n => n.AuthorID == user.ID);
+            IEnumerable<NewsArticle> newsArticles = this.newsArticlesRepository
+                .GetAll().Where(n => n.AuthorID == user.ID).ToList();
             foreach (NewsArticle newsArticle in newsArticles)
             {
                 newsArticlesModels.Add(NewsArticlesMapper.ToNewsArticleModel(newsArticle));
@@ -150,8 +150,8 @@
 
             ICollection<CommentModel> commentModels = new List<CommentModel>();
 
-            IQueryable<Comment> comments = this.commentsRepository
-                .GetAll().Where(c => c.AuthorID == user.ID);
+            IEnumerable<Comment> comments = this.commentsRepository
+                .GetAll().Where(c => c.AuthorID == user.ID).ToList();
             foreach (Comment comment in comments)
             {
                 commentModels.Add(CommentsMapper.ToCommentModel(comment));

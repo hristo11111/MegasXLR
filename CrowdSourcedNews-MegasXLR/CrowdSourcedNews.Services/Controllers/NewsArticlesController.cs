@@ -135,7 +135,7 @@
             }
 
             ICollection<NewsArticleDetails> newsArticles = new List<NewsArticleDetails>();
-            IQueryable<NewsArticle> newsArticlesEntities = this.newsArticlesRepository.GetAll();
+            IEnumerable<NewsArticle> newsArticlesEntities = this.newsArticlesRepository.GetAll().ToList();
             foreach (var newsArticle in newsArticlesEntities)
             {
                 newsArticles.Add(NewsArticlesMapper.ToNewsArticleDetails(newsArticle));
@@ -166,8 +166,8 @@
             NewsArticle updatedNewsArticle = null;
             try
             {
-                updatedNewsArticle =
-                    NewsArticlesMapper.ToNewsArticleEntity(newsArticle, usersRepository, commentsRepository, newsArticlesRepository);
+                updatedNewsArticle = NewsArticlesMapper
+                    .ToNewsArticleEntity(newsArticle, usersRepository, commentsRepository, newsArticlesRepository);
             }
             catch (Exception)
             {
