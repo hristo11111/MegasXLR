@@ -40,6 +40,11 @@
                 return new NewsArticlesController(
                     newsArticlesRepository, usersRepository, commentsRepository);
             }
+            else if (serviceType == typeof(CommentsController))
+            {
+                return new CommentsController(
+                    commentsRepository, newsArticlesRepository, usersRepository);
+            }
             else
             {
                 return null;

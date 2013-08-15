@@ -189,5 +189,35 @@
                 return Request.CreateErrorResponse(HttpStatusCode.NotFound, "News article not found!");
             }
         }
+
+        [HttpPut, ActionName("rate")]
+        public HttpResponseMessage RateNewsArticle(string sessionKey, int id, int rate)
+        {
+            User user = null;
+            try
+            {
+                user = this.usersRepository.GetBySessionKey(sessionKey);
+            }
+            catch (Exception)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Invalid user!");
+            }
+
+            NewsArticle newsArticle = this.newsArticlesRepository.Get(id);
+            if (newsArticle == null)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.NotFound, "News article not found!");
+            }
+
+            if (rate != 1 && rate != -1)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Invalid rate provided!");
+            }
+
+            newsArticle.Rating += rate;
+            this.newsArticlesRepository.Update(id, newsArticle);
+
+            return Request.CreateResponse(HttpStatusCode.OK);
+        }
     }
 }
