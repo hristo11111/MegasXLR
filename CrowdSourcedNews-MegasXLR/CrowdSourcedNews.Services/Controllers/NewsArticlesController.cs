@@ -10,12 +10,15 @@
     using CrowdSourcedNews.Mappers;
     using System.Collections.Generic;
     using System.Linq;
+    using Spring.Social.Dropbox.Api;
+    using CrowdSourcedNews.Services.Utilities;
 
     public class NewsArticlesController : ApiController
     {
         private IRepository<NewsArticle> newsArticlesRepository;
         private DbUsersRepository usersRepository;
         private IRepository<Comment> commentsRepository;
+        private static IDropbox dropbox = DropboxUtilities.CreateAndLoginDropBox();
 
         public NewsArticlesController(
             IRepository<NewsArticle> newsArticlesRepository,
@@ -41,7 +44,6 @@
             }
 
             newsArticle.Author = user.Nickname;
-            // Maybe pictures must be provided here
 
             NewsArticle newsArticleEntity = null;
             try
@@ -56,9 +58,22 @@
 
             newsArticle.ID = newsArticleEntity.ID;
 
+            AddImages(newsArticle, newsArticleEntity);
+
             this.newsArticlesRepository.Add(newsArticleEntity);
 
             return Request.CreateResponse(HttpStatusCode.Created, newsArticle);
+        }
+
+        private static void AddImages(NewsArticleModel newsArticle, NewsArticle newsArticleEntity)
+        {
+            foreach (string imageUrl in newsArticle.ImagesUrls)
+            {
+                Entry uploadFileEntry = DropboxUtilities.UploadImage(imageUrl, dropbox, "New_Folder");
+                DropboxLink imageLink = dropbox.GetShareableLinkAsync(uploadFileEntry.Path).Result;
+
+                newsArticleEntity.ImagesUrls.Add(imageLink.Url);
+            }
         }
 
         [HttpGet, ActionName("get")]

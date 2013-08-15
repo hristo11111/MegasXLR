@@ -149,3 +149,13 @@ C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSour
 C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Services\bin\CrowdSourcedNews.Repositories.pdb
 C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Services\bin\CrowdSourcedNews.Mappers.dll
 C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Services\bin\CrowdSourcedNews.Mappers.pdb
+C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Services\bin\Common.Logging.dll
+C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Services\bin\Spring.Rest.dll
+C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Services\bin\Spring.Social.Core.dll
+C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Services\bin\Spring.Social.Dropbox.dll
+C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Services\bin\Spring.Rest.pdb
+C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Services\bin\Spring.Rest.xml
+C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Services\bin\Spring.Social.Core.pdb
+C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Services\bin\Spring.Social.Core.xml
+C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Services\bin\Spring.Social.Dropbox.pdb
+C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Services\bin\Spring.Social.Dropbox.xml
