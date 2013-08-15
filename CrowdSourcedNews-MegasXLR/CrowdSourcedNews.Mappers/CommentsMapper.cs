@@ -6,26 +6,20 @@
 
     public static class CommentsMapper
     {
-        public static Comment ToCommentEntity(CommentModel commentModel, DbUsersRepository usersRepository)
+        public static Comment ToCommentEntity(
+            CommentModel commentModel, 
+            DbUsersRepository usersRepository, 
+            IRepository<NewsArticle> newsArticlesRepository)
         {
             Comment commentEntity = new Comment()
                 {
-                    ID = commentModel.ID,
                     Content = commentModel.Content,
                     Date = commentModel.Date,
                     Author = usersRepository.GetByNickname(commentModel.Author)
                 };
 
-            foreach (CommentDetails subComment in commentModel.SubComments)
-            {
-                commentEntity.SubComments.Add(new Comment()
-                {
-                    ID = subComment.ID,
-                    Content = subComment.Content,
-                    Date = subComment.Date,
-                    Author = usersRepository.GetByNickname(subComment.Author)
-                });
-            }
+            NewsArticle newsArticle = newsArticlesRepository.Get(commentModel.ArticleID);
+            newsArticle.Comments.Add(commentEntity);
 
             return commentEntity;
         }
@@ -39,17 +33,6 @@
                     Content = commentEntity.Content,
                     Date = commentEntity.Date
                 };
-
-            foreach (Comment subComment in commentEntity.SubComments)
-            {
-                commentModel.SubComments.Add(new CommentDetails()
-                    {
-                        ID = subComment.ID,
-                        Author = subComment.Author.Nickname,
-                        Content = subComment.Content,
-                        Date = subComment.Date
-                    });
-            }
 
             return commentModel;
         }

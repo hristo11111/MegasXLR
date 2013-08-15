@@ -12,7 +12,6 @@
         public NewsArticle()
         {
             this.comments = new List<Comment>();
-            this.ImagesUrls = new List<string>();
         }
 
         [Key, Column("NewsArticleID")]
@@ -33,7 +32,7 @@
 
         public int Rating { get; set; }
 
-        public ICollection<string> ImagesUrls { get; set; }
+        public string ImageUrl { get; set; }
 
         public virtual ICollection<Comment> Comments
         {

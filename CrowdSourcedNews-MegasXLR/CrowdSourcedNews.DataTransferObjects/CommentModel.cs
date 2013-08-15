@@ -1,17 +1,23 @@
 ﻿namespace CrowdSourcedNews.DataTransferObjects
 {
-    using System.Collections.Generic;
+    using System;
     using System.Runtime.Serialization;
 
-    [DataContract]
-    public class CommentModel : CommentDetails
+    public class CommentModel
     {
-        public CommentModel()
-        {
-            this.SubComments = new List<CommentDetails>();
-        }
+        [DataMember(Name = "id")]
+        public int ID { get; set; }
 
-        [DataMember(Name = "subComments")]
-        public ICollection<CommentDetails> SubComments { get; set; }
+        [DataMember(Name = "content")]
+        public string Content { get; set; }
+
+        [DataMember(Name = "author")]
+        public string Author { get; set; }
+
+        [DataMember(Name = "date")]
+        public DateTime Date { get; set; }
+
+        [DataMember(Name = "articleID")]
+        public int ArticleID { get; set; }
     }
 }

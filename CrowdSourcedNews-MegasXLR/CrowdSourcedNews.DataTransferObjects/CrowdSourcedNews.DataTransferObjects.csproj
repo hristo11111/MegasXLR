@@ -40,8 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommentDetails.cs" />
     <Compile Include="CommentModel.cs" />
+    <Compile Include="ImageUrl.cs" />
     <Compile Include="NewsArticleDetails.cs" />
     <Compile Include="NewsArticleModel.cs" />
     <Compile Include="UserLoggedModel.cs" />

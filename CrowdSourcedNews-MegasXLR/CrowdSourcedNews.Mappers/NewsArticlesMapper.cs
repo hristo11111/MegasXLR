@@ -10,7 +10,8 @@
         public static NewsArticle ToNewsArticleEntity(
             NewsArticleModel newsArticleModel,
             DbUsersRepository usersRepository,
-            IRepository<Comment> commentsRepository)
+            IRepository<Comment> commentsRepository,
+            IRepository<NewsArticle> newsArticlesRepository)
         {
             NewsArticle newsArticleEntity = new NewsArticle()
                 {
@@ -18,7 +19,7 @@
                     Author = usersRepository.GetByNickname(newsArticleModel.Author),
                     Content = newsArticleModel.Content,
                     Date = newsArticleModel.Date,
-                    ImagesUrls = newsArticleModel.ImagesUrls,
+                    ImageUrl = newsArticleModel.ImageUrl,
                     Rating = newsArticleModel.Rating,
                     Title = newsArticleModel.Title
                 };
@@ -26,7 +27,11 @@
             foreach (CommentModel comment in newsArticleModel.Comments)
             {
                 newsArticleEntity.Comments.Add(
-                    Extensions.CreateOrLoadComment(comment, commentsRepository, usersRepository));
+                    Extensions.CreateOrLoadComment(
+                        comment, 
+                        commentsRepository, 
+                        usersRepository,
+                        newsArticlesRepository));
             }
 
             return newsArticleEntity;
@@ -40,7 +45,7 @@
                     Title = newsArticle.Title,
                     Content = newsArticle.Content,
                     Rating = newsArticle.Rating,
-                    ImagesUrls = new List<string>(newsArticle.ImagesUrls),
+                    ImageUrl = newsArticle.ImageUrl,
                     Date = newsArticle.Date,
                     Author = newsArticle.Author.Nickname
                 };

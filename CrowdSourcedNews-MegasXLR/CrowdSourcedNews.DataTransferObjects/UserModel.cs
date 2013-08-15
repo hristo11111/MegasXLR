@@ -21,6 +21,6 @@
         public ICollection<NewsArticleModel> NewsArticles { get; set; }
 
         [DataMember(Name = "comments")]
-        public ICollection<CommentDetails> Comments { get; set; }
+        public ICollection<CommentModel> Comments { get; set; }
     }
 }

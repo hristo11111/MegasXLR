@@ -49,7 +49,7 @@
             try
             {
                 newsArticleEntity = NewsArticlesMapper
-                    .ToNewsArticleEntity(newsArticle, usersRepository, commentsRepository);
+                    .ToNewsArticleEntity(newsArticle, usersRepository, commentsRepository, newsArticlesRepository);
             }
             catch (Exception)
             {
@@ -58,24 +58,13 @@
 
             newsArticle.ID = newsArticleEntity.ID;
 
-            AddImages(newsArticle, newsArticleEntity);
+            AddImage(newsArticle, newsArticleEntity);
 
             this.newsArticlesRepository.Add(newsArticleEntity);
 
             PubNubSender.SendJsonMessage("ARTICLE_ADDED", newsArticle);
 
             return Request.CreateResponse(HttpStatusCode.Created, newsArticle);
-        }
-
-        private static void AddImages(NewsArticleModel newsArticle, NewsArticle newsArticleEntity)
-        {
-            foreach (string imageUrl in newsArticle.ImagesUrls)
-            {
-                Entry uploadFileEntry = DropboxUtilities.UploadImage(imageUrl, dropbox, "New_Folder");
-                DropboxLink imageLink = dropbox.GetMediaLinkAsync(uploadFileEntry.Path).Result;
-
-                newsArticleEntity.ImagesUrls.Add(imageLink.Url);
-            }
         }
 
         [HttpGet, ActionName("get")]
@@ -157,7 +146,7 @@
             try
             {
                 updatedNewsArticle =
-                    NewsArticlesMapper.ToNewsArticleEntity(newsArticle, usersRepository, commentsRepository);
+                    NewsArticlesMapper.ToNewsArticleEntity(newsArticle, usersRepository, commentsRepository, newsArticlesRepository);
             }
             catch (Exception)
             {
@@ -166,7 +155,7 @@
 
             this.newsArticlesRepository.Update(id, updatedNewsArticle);
 
-            PubNubSender.SendJsonMessage("ARTICLE_EDITED", updatedNewsArticle);
+            PubNubSender.SendJsonMessage("ARTICLE_EDITED", newsArticle);
 
             return Request.CreateResponse(HttpStatusCode.OK);
         }
@@ -222,6 +211,14 @@
             this.newsArticlesRepository.Update(id, newsArticle);
 
             return Request.CreateResponse(HttpStatusCode.OK);
+        }
+
+        private static void AddImage(NewsArticleModel newsArticle, NewsArticle newsArticleEntity)
+        {
+            Entry uploadFileEntry = DropboxUtilities.UploadImage(newsArticle.ImageUrl, dropbox, "New_Folder");
+            DropboxLink imageLink = dropbox.GetMediaLinkAsync(uploadFileEntry.Path).Result;
+
+            newsArticleEntity.ImageUrl = imageLink.Url;
         }
     }
 }

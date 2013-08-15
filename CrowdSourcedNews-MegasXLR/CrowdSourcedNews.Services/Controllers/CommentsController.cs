@@ -45,7 +45,8 @@
             Comment commentEntity = null;
             try
             {
-                commentEntity = CommentsMapper.ToCommentEntity(comment, usersRepository);
+                commentEntity = 
+                    CommentsMapper.ToCommentEntity(comment, usersRepository, newsArticlesRepository);
             }
             catch (Exception)
             {
@@ -105,7 +106,7 @@
             try
             {
                 updatedComment =
-                    CommentsMapper.ToCommentEntity(comment, usersRepository);
+                    CommentsMapper.ToCommentEntity(comment, usersRepository, newsArticlesRepository);
             }
             catch (Exception)
             {
