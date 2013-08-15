@@ -8,6 +8,8 @@
     using CrowdSourcedNews.DataTransferObjects;
     using System.Net;
     using CrowdSourcedNews.Mappers;
+    using System.Collections.Generic;
+    using System.Linq;
 
     public class NewsArticlesController : ApiController
     {
@@ -91,5 +93,31 @@
             HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, newsArticleModel);
             return response;
         }
+
+        [HttpGet, ActionName("get")]
+        public HttpResponseMessage GetAll(string sessionKey)
+        {
+            User user = null;
+            try
+            {
+                user = this.usersRepository.GetBySessionKey(sessionKey);
+            }
+            catch (Exception)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.NotFound, "User not found!");
+            }
+
+            ICollection<NewsArticleDetails> newsArticles = new List<NewsArticleDetails>();
+            IQueryable<NewsArticle> newsArticlesEntities = this.newsArticlesRepository.GetAll();
+            foreach (var newsArticle in newsArticlesEntities)
+            {
+                newsArticles.Add(NewsArticlesMapper.ToNewsArticleDetails(newsArticle));
+            }
+
+            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, newsArticles);
+            return response;
+        }
+
+
     }
 }

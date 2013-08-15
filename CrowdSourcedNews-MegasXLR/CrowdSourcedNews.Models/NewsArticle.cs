@@ -11,8 +11,8 @@
 
         public NewsArticle()
         {
-            this.comments = new HashSet<Comment>();
-            this.ImagesUrls = new HashSet<string>();
+            this.comments = new List<Comment>();
+            this.ImagesUrls = new List<string>();
         }
 
         [Key, Column("NewsArticleID")]

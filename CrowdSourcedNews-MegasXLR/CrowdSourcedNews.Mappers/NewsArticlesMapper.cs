@@ -1,5 +1,6 @@
 ﻿namespace CrowdSourcedNews.Mappers
 {
+    using System.Collections.Generic;
     using CrowdSourcedNews.DataTransferObjects;
     using CrowdSourcedNews.Models;
     using CrowdSourcedNews.Repositories;
@@ -39,7 +40,7 @@
                     Title = newsArticle.Title,
                     Content = newsArticle.Content,
                     Rating = newsArticle.Rating,
-                    ImagesUrls = newsArticle.ImagesUrls,
+                    ImagesUrls = new List<string>(newsArticle.ImagesUrls),
                     Date = newsArticle.Date,
                     Author = newsArticle.Author.Nickname
                 };
@@ -50,6 +51,20 @@
             }
 
             return newsArticleModel;
+        }
+
+        public static NewsArticleDetails ToNewsArticleDetails(NewsArticle newsArticle)
+        {
+            NewsArticleDetails newsArticleDetails = new NewsArticleDetails()
+                {
+                    ID = newsArticle.ID,
+                    Author = newsArticle.Author.Nickname,
+                    Date = newsArticle.Date,
+                    Rating = newsArticle.Rating,
+                    Title = newsArticle.Title
+                };
+
+            return newsArticleDetails;
         }
     }
 }

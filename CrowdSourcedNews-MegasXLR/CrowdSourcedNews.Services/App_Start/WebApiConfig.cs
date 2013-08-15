@@ -12,7 +12,7 @@ namespace CrowdSourcedNews.Services
             config.Routes.MapHttpRoute(
                 name: "NewsArticlesApi",
                 routeTemplate: "api/newsArticles/{id}/{action}/{sessionKey}",
-                defaults: new { controller = "newsArticles" }
+                defaults: new { controller = "newsArticles", id = RouteParameter.Optional }
                 );
 
             config.Routes.MapHttpRoute(

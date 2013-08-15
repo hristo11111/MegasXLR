@@ -11,8 +11,8 @@
 
         public User()
         {
-            this.newsArticles = new HashSet<NewsArticle>();
-            this.comments = new HashSet<Comment>();
+            this.newsArticles = new List<NewsArticle>();
+            this.comments = new List<Comment>();
         }
 
         [Key, Column("UserID")]
