@@ -6,3 +6,5 @@ C:\Users\Hristo\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourced
 C:\Users\Hristo\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Models\bin\Debug\CrowdSourcedNews.Models.pdb
 C:\Users\Hristo\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Models\obj\Debug\CrowdSourcedNews.Models.dll
 C:\Users\Hristo\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Models\obj\Debug\CrowdSourcedNews.Models.pdb
+C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Models\bin\Debug\Common.Logging.dll
+C:\Users\Vladislav\Documents\GitHub\MegasXLR\CrowdSourcedNews-MegasXLR\CrowdSourcedNews.Models\obj\Debug\CrowdSourcedNews.Models.csprojResolveAssemblyReference.cache
