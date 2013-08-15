@@ -37,31 +37,33 @@
         {
             string imageName = Path.GetFileName(imagePath);
 
-            Entry uploadFileEntry = dropbox.UploadFileAsync(new FileResource(imagePath),
-            "/" + folderName + "/" + imageName).Result;
+            Entry uploadFileEntry = dropbox.UploadFileAsync(
+                new FileResource(imagePath),
+                "/" + folderName + "/" + imageName).Result;
 
             return uploadFileEntry;
         }
 
         private static OAuthToken LoadOAuthToken()
         {
-            OAuthToken oauthAccessToken = new OAuthToken("aw8uyh86kel3jeks", "u09gleqa1g5di8z");
+            string[] lines = File.ReadAllLines(OAuthTokenFileName);
+            OAuthToken oauthAccessToken = new OAuthToken(lines[0], lines[1]);
             return oauthAccessToken;
         }
 
         private static void AuthorizeAppOAuth(DropboxServiceProvider dropboxServiceProvider)
         {
             OAuthToken oauthToken = dropboxServiceProvider.OAuthOperations.FetchRequestTokenAsync(null, null).Result;
-            
+
             OAuth1Parameters parameters = new OAuth1Parameters();
             string authenticateUrl = dropboxServiceProvider.OAuthOperations.BuildAuthorizeUrl(
                 oauthToken.Value, parameters);
             Process.Start(authenticateUrl);
-            
+
             AuthorizedRequestToken requestToken = new AuthorizedRequestToken(oauthToken, null);
             OAuthToken oauthAccessToken =
                 dropboxServiceProvider.OAuthOperations.ExchangeForAccessTokenAsync(requestToken, null).Result;
-            
+
             string[] oauthData = new string[] { oauthAccessToken.Value, oauthAccessToken.Secret };
             File.WriteAllLines(OAuthTokenFileName, oauthData);
         }
