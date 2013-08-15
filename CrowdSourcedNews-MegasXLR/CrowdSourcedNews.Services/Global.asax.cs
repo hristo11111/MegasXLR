@@ -26,6 +26,7 @@ namespace CrowdSourcedNews.Services
 
             CrowdSourcedNewsContext context = new CrowdSourcedNewsContext();
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<CrowdSourcedNewsContext, Configuration>());
+            context.Users.Add(new Models.User() { Nickname = "Doncho Minkov", AuthCode = "96b828b4cc79f50bf8faef6e7b4a1dcfb356dea6", Username = "Dodo" });
             GlobalConfiguration.Configuration.DependencyResolver = new DbDependencyResolver(context);
         }
     }
