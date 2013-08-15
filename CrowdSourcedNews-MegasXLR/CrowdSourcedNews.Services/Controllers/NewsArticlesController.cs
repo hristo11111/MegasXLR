@@ -60,9 +60,12 @@
 
             newsArticle.ID = newsArticleEntity.ID;
 
-            string imageUrl = this.GetImageUrl(HttpContext.Current.Request.Files[0]);
-            newsArticleEntity.ImageUrl = imageUrl;
-            newsArticle.ImageUrl = imageUrl;
+            if (HttpContext.Current.Request.Files.Count != 0)
+            {
+                string imageUrl = this.GetImageUrl(HttpContext.Current.Request.Files[0]);
+                newsArticleEntity.ImageUrl = imageUrl;
+                newsArticle.ImageUrl = imageUrl;
+            }
 
             this.newsArticlesRepository.Add(newsArticleEntity);
 
