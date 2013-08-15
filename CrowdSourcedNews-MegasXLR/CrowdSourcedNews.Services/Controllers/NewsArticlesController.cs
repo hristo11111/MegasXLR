@@ -31,7 +31,7 @@
         }
 
         [HttpPost, ActionName("add")]
-        public HttpResponseMessage PostNewsArticle(string sessionKey, [FromBody]NewsArticleModel newsArticle)
+        public HttpResponseMessage PostNewsArticle(string sessionKey, NewsArticleModel newsArticle)
         {
             User user = null;
             try
