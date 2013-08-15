@@ -42,7 +42,6 @@
   <ItemGroup>
     <Compile Include="Comment.cs" />
     <Compile Include="NewsArticle.cs" />
-    <Compile Include="ServerErrorException.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

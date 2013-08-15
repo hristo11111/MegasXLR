@@ -9,7 +9,6 @@
         public UserModel()
         {
             this.NewsArticles = new HashSet<NewsArticleModel>();
-            this.Comments = new HashSet<CommentDetails>();
         }
 
         [DataMember(Name = "id")]

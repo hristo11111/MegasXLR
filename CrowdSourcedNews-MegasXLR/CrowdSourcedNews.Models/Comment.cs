@@ -7,11 +7,11 @@
 
     public class Comment
     {
-        private ICollection<Comment> comments;
+        private ICollection<Comment> subComments;
 
         public Comment()
         {
-            this.comments = new List<Comment>();
+            this.subComments = new List<Comment>();
         }
 
         [Key]
@@ -22,18 +22,21 @@
         [Required, ForeignKey("AuthorID")]
         public User Author { get; set; }
 
+        public int NewsArticleID { get; set; }
+
+        [Required, ForeignKey("NewsArticleID")]
+        public NewsArticle NewsArticle { get; set; }
+
         [Required]
         public string Content { get; set; }
 
         public DateTime Date { get; set; }
 
-        public bool IsNested { get; set; }
-
-        public virtual ICollection<Comment> Comments
+        public virtual ICollection<Comment> SubComments
         {
-            get { return this.comments; }
+            get { return this.subComments; }
 
-            set { this.comments = value; }
+            set { this.subComments = value; }
         }
     }
 }

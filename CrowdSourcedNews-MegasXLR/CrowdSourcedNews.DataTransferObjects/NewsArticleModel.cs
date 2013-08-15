@@ -9,8 +9,8 @@
     {
         public NewsArticleModel()
         {
-            this.Images = new HashSet<string>();
-            this.Comments = new HashSet<CommentDetails>();
+            this.ImagesUrls = new HashSet<string>();
+            this.Comments = new HashSet<CommentModel>();
         }
 
         [DataMember(Name = "id")]
@@ -23,7 +23,7 @@
         public string Content { get; set; }
 
         [DataMember(Name = "author")]
-        public UserModel Author { get; set; }
+        public string Author { get; set; }
 
         [DataMember(Name = "date")]
         public DateTime Date { get; set; }
@@ -32,9 +32,9 @@
         public int Rating { get; set; }
 
         [DataMember(Name = "images")]
-        public ICollection<string> Images { get; set; }
+        public ICollection<string> ImagesUrls { get; set; }
 
         [DataMember(Name = "comments")]
-        public ICollection<CommentDetails> Comments { get; set; }
+        public ICollection<CommentModel> Comments { get; set; }
     }
 }

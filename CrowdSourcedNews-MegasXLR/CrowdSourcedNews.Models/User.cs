@@ -27,7 +27,6 @@
         [Required]
         public string AuthCode { get; set; }
 
-        [Required]
         public string SessionKey { get; set; }
 
         public virtual ICollection<NewsArticle> NewsArticles

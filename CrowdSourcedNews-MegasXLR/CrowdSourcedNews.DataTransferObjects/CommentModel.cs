@@ -8,10 +8,10 @@
     {
         public CommentModel()
         {
-            this.Comments = new List<CommentDetails>();
+            this.SubComments = new List<CommentDetails>();
         }
 
-        [DataMember(Name = "comments")]
-        public ICollection<CommentDetails> Comments { get; set; }
+        [DataMember(Name = "subComments")]
+        public ICollection<CommentDetails> SubComments { get; set; }
     }
 }

@@ -5,12 +5,12 @@ namespace CrowdSourcedNews.Data.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    public sealed class Configuration : DbMigrationsConfiguration<CrowdSourcedNews.Data.CrowdSourcedNewsContext>
+    public sealed class Configuration : DbMigrationsConfiguration<CrowdSourcedNewsContext>
     { 
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
-            AutomaticMigrationDataLossAllowed = true;
+            this.AutomaticMigrationsEnabled = true;
+            this.AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(CrowdSourcedNews.Data.CrowdSourcedNewsContext context)
