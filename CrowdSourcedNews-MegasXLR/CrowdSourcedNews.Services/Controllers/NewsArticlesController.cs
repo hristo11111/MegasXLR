@@ -62,6 +62,8 @@
 
             this.newsArticlesRepository.Add(newsArticleEntity);
 
+            PubNubSender.SendJsonMessage("ARTICLE_ADDED", newsArticle);
+
             return Request.CreateResponse(HttpStatusCode.Created, newsArticle);
         }
 
@@ -70,7 +72,7 @@
             foreach (string imageUrl in newsArticle.ImagesUrls)
             {
                 Entry uploadFileEntry = DropboxUtilities.UploadImage(imageUrl, dropbox, "New_Folder");
-                DropboxLink imageLink = dropbox.GetShareableLinkAsync(uploadFileEntry.Path).Result;
+                DropboxLink imageLink = dropbox.GetMediaLinkAsync(uploadFileEntry.Path).Result;
 
                 newsArticleEntity.ImagesUrls.Add(imageLink.Url);
             }
@@ -163,6 +165,8 @@
             }
 
             this.newsArticlesRepository.Update(id, updatedNewsArticle);
+
+            PubNubSender.SendJsonMessage("ARTICLE_EDITED", updatedNewsArticle);
 
             return Request.CreateResponse(HttpStatusCode.OK);
         }

@@ -20,10 +20,10 @@
                 new DropboxServiceProvider(DropboxAppKey, DropboxAppSecret, AccessLevel.AppFolder);
 
             // Authenticate the application (if not authenticated) and load the OAuth token
-            if (!File.Exists(OAuthTokenFileName))
-            {
-                AuthorizeAppOAuth(dropboxServiceProvider);
-            }
+            //if (!File.Exists(OAuthTokenFileName))
+            //{
+            //    AuthorizeAppOAuth(dropboxServiceProvider);
+            //}
 
             OAuthToken oauthAccessToken = LoadOAuthToken();
 
@@ -46,26 +46,25 @@
 
         private static OAuthToken LoadOAuthToken()
         {
-            string[] lines = File.ReadAllLines(OAuthTokenFileName);
-            OAuthToken oauthAccessToken = new OAuthToken(lines[0], lines[1]);
+            OAuthToken oauthAccessToken = new OAuthToken("88lixsugnarrd19f", "94ao4bfgaao095k");
             return oauthAccessToken;
         }
 
-        private static void AuthorizeAppOAuth(DropboxServiceProvider dropboxServiceProvider)
-        {
-            OAuthToken oauthToken = dropboxServiceProvider.OAuthOperations.FetchRequestTokenAsync(null, null).Result;
+        //private static void AuthorizeAppOAuth(DropboxServiceProvider dropboxServiceProvider)
+        //{
+        //    OAuthToken oauthToken = dropboxServiceProvider.OAuthOperations.FetchRequestTokenAsync(null, null).Result;
 
-            OAuth1Parameters parameters = new OAuth1Parameters();
-            string authenticateUrl = dropboxServiceProvider.OAuthOperations.BuildAuthorizeUrl(
-                oauthToken.Value, parameters);
-            Process.Start(authenticateUrl);
+        //    OAuth1Parameters parameters = new OAuth1Parameters();
+        //    string authenticateUrl = dropboxServiceProvider.OAuthOperations.BuildAuthorizeUrl(
+        //        oauthToken.Value, parameters);
+        //    Process.Start(authenticateUrl);
 
-            AuthorizedRequestToken requestToken = new AuthorizedRequestToken(oauthToken, null);
-            OAuthToken oauthAccessToken =
-                dropboxServiceProvider.OAuthOperations.ExchangeForAccessTokenAsync(requestToken, null).Result;
+        //    AuthorizedRequestToken requestToken = new AuthorizedRequestToken(oauthToken, null);
+        //    OAuthToken oauthAccessToken =
+        //        dropboxServiceProvider.OAuthOperations.ExchangeForAccessTokenAsync(requestToken, null).Result;
 
-            string[] oauthData = new string[] { oauthAccessToken.Value, oauthAccessToken.Secret };
-            File.WriteAllLines(OAuthTokenFileName, oauthData);
-        }
+        //    string[] oauthData = new string[] { oauthAccessToken.Value, oauthAccessToken.Secret };
+        //    File.WriteAllLines(OAuthTokenFileName, oauthData);
+        //}
     }
 }
