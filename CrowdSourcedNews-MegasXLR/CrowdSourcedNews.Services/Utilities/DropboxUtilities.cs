@@ -17,7 +17,7 @@
         public static IDropbox CreateAndLoginDropBox()
         {
             DropboxServiceProvider dropboxServiceProvider =
-            new DropboxServiceProvider(DropboxAppKey, DropboxAppSecret, AccessLevel.AppFolder);
+                new DropboxServiceProvider(DropboxAppKey, DropboxAppSecret, AccessLevel.AppFolder);
 
             // Authenticate the application (if not authenticated) and load the OAuth token
             if (!File.Exists(OAuthTokenFileName))
@@ -45,8 +45,7 @@
 
         private static OAuthToken LoadOAuthToken()
         {
-            string[] lines = File.ReadAllLines(OAuthTokenFileName);
-            OAuthToken oauthAccessToken = new OAuthToken(lines[0], lines[1]);
+            OAuthToken oauthAccessToken = new OAuthToken("aw8uyh86kel3jeks", "u09gleqa1g5di8z");
             return oauthAccessToken;
         }
 
