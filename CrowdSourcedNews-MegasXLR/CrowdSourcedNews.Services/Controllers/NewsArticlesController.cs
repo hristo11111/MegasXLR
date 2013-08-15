@@ -37,7 +37,7 @@
             }
             catch (Exception)
             {
-                return Request.CreateErrorResponse(HttpStatusCode.NotFound, "User not found!");
+                return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Invalid user!");
             }
 
             newsArticle.Author = user.Nickname;
@@ -71,13 +71,13 @@
             }
             catch (Exception)
             {
-                return Request.CreateErrorResponse(HttpStatusCode.NotFound, "User not found!");
+                return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Invalid user!");
             }
 
             NewsArticle newsArticle = this.newsArticlesRepository.Get(id);
             if (newsArticle == null)
             {
-                return Request.CreateResponse(HttpStatusCode.NotFound);
+                return Request.CreateErrorResponse(HttpStatusCode.NotFound, "News article not found!");
             }
 
             NewsArticleModel newsArticleModel = null;
@@ -104,7 +104,7 @@
             }
             catch (Exception)
             {
-                return Request.CreateErrorResponse(HttpStatusCode.NotFound, "User not found!");
+                return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Invalid user!");
             }
 
             ICollection<NewsArticleDetails> newsArticles = new List<NewsArticleDetails>();
@@ -118,6 +118,61 @@
             return response;
         }
 
+        [HttpPut, ActionName("edit")]
+        public HttpResponseMessage EditNewsArticle(string sessionKey, int id, NewsArticleModel newsArticle)
+        {
+            User user = null;
+            try
+            {
+                user = this.usersRepository.GetBySessionKey(sessionKey);
+            }
+            catch (Exception)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Invalid user!");
+            }
 
+            if (id != newsArticle.ID)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest);
+            }
+
+            NewsArticle updatedNewsArticle = null;
+            try
+            {
+                updatedNewsArticle =
+                    NewsArticlesMapper.ToNewsArticleEntity(newsArticle, usersRepository, commentsRepository);
+            }
+            catch (Exception)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Invalid news article model provided!");
+            }
+
+            this.newsArticlesRepository.Update(id, updatedNewsArticle);
+
+            return Request.CreateResponse(HttpStatusCode.OK);
+        }
+
+        [HttpDelete, ActionName("remove")]
+        public HttpResponseMessage RemoveNewsArticle(string sessionKey, int id)
+        {
+            User user = null;
+            try
+            {
+                user = this.usersRepository.GetBySessionKey(sessionKey);
+            }
+            catch (Exception)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Invalid user!");
+            }
+
+            if (this.newsArticlesRepository.Delete(id))
+            {
+                return Request.CreateResponse(HttpStatusCode.OK);
+            }
+            else
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.NotFound, "News article not found!");
+            }
+        }
     }
 }

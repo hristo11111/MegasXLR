@@ -1,6 +1,7 @@
 ﻿namespace CrowdSourcedNews.Services.Controllers
 {
     using System;
+    using System.Collections.Generic;
     using System.Linq;
     using System.Net;
     using System.Net.Http;
@@ -9,8 +10,8 @@
     using CrowdSourcedNews.Models;
     using CrowdSourcedNews.Repositories;
     using CrowdSourcedNews.Mappers;
-    using CrowdSourcedNews.Services.Validators;
-    using System.Collections.Generic;
+    using CrowdSourcedNews.Services;
+    using CrowdSourcedNews.Services.Utilities;
 
     public class UsersController : ApiController
     {
@@ -150,7 +151,7 @@
             ICollection<CommentModel> commentModels = new List<CommentModel>();
 
             IQueryable<Comment> comments = this.commentsRepository
-                .GetAll().Where(n => n.AuthorID == user.ID);
+                .GetAll().Where(c => c.AuthorID == user.ID);
             foreach (Comment comment in comments)
             {
                 commentModels.Add(CommentsMapper.ToCommentModel(comment));
