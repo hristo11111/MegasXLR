@@ -12,6 +12,8 @@
     using System.Linq;
     using Spring.Social.Dropbox.Api;
     using CrowdSourcedNews.Services.Utilities;
+    using System.Web;
+    using System.IO;
 
     public class NewsArticlesController : ApiController
     {
@@ -58,13 +60,29 @@
 
             newsArticle.ID = newsArticleEntity.ID;
 
-            AddImage(newsArticle, newsArticleEntity);
+            string imageUrl = this.GetImageUrl(HttpContext.Current.Request.Files[0]);
+            newsArticleEntity.ImageUrl = imageUrl;
+            newsArticle.ImageUrl = imageUrl;
 
             this.newsArticlesRepository.Add(newsArticleEntity);
 
             PubNubSender.SendJsonMessage("ARTICLE_ADDED", newsArticle);
 
             return Request.CreateResponse(HttpStatusCode.Created, newsArticle);
+        }
+
+        private string GetImageUrl(HttpPostedFile image)
+        {
+            string fileName = image.FileName + DateTime.Now.Ticks;
+            string imagePath = HttpContext.Current.Server.MapPath("~/App_Data/") + fileName;
+            image.SaveAs(imagePath);
+
+            Entry imageEntry = DropboxUtilities.UploadImage(imagePath, dropbox, "New_Folder");
+
+            DropboxLink imageLink = dropbox.GetMediaLinkAsync(imageEntry.Path).Result;
+
+            File.Delete(imagePath);
+            return imageLink.Url;
         }
 
         [HttpGet, ActionName("get")]
@@ -153,6 +171,8 @@
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Invalid news article model provided!");
             }
 
+            // UPDATE IMAGES
+
             this.newsArticlesRepository.Update(id, updatedNewsArticle);
 
             PubNubSender.SendJsonMessage("ARTICLE_EDITED", newsArticle);
@@ -211,14 +231,6 @@
             this.newsArticlesRepository.Update(id, newsArticle);
 
             return Request.CreateResponse(HttpStatusCode.OK);
-        }
-
-        private static void AddImage(NewsArticleModel newsArticle, NewsArticle newsArticleEntity)
-        {
-            Entry uploadFileEntry = DropboxUtilities.UploadImage(newsArticle.ImageUrl, dropbox, "New_Folder");
-            DropboxLink imageLink = dropbox.GetMediaLinkAsync(uploadFileEntry.Path).Result;
-
-            newsArticleEntity.ImageUrl = imageLink.Url;
         }
     }
 }
