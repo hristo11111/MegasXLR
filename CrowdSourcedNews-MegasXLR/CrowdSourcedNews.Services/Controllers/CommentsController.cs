@@ -74,7 +74,7 @@
             }
 
             ICollection<CommentModel> comments = new List<CommentModel>();
-            IQueryable<Comment> commentEntities = this.commentsRepository.GetAll();
+            IEnumerable<Comment> commentEntities = this.commentsRepository.GetAll().ToList();
             foreach (var comment in commentEntities)
             {
                 comments.Add(CommentsMapper.ToCommentModel(comment));
