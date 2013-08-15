@@ -8,6 +8,8 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using CrowdSourcedNews.Data;
 using CrowdSourcedNews.Services.DependencyResolvers;
+using System.Data.Entity;
+using CrowdSourcedNews.Data.Migrations;
 
 namespace CrowdSourcedNews.Services
 {
@@ -23,6 +25,7 @@ namespace CrowdSourcedNews.Services
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             CrowdSourcedNewsContext context = new CrowdSourcedNewsContext();
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<CrowdSourcedNewsContext, Configuration>());
             GlobalConfiguration.Configuration.DependencyResolver = new DbDependencyResolver(context);
         }
     }

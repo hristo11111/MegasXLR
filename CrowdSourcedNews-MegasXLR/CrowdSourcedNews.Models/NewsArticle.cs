@@ -27,7 +27,7 @@
         public int AuthorID { get; set; }
 
         [Required, ForeignKey("AuthorID")]
-        public User Author { get; set; }
+        public virtual User Author { get; set; }
 
         public DateTime Date { get; set; }
 

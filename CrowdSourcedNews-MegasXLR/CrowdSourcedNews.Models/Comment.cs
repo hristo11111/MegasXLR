@@ -14,23 +14,23 @@
             this.subComments = new List<Comment>();
         }
 
-        [Key]
+        [Key, Column("CommentID")]
         public int ID { get; set; }
 
         public int AuthorID { get; set; }
 
         [Required, ForeignKey("AuthorID")]
-        public User Author { get; set; }
-
-        public int NewsArticleID { get; set; }
-
-        [Required, ForeignKey("NewsArticleID")]
-        public NewsArticle NewsArticle { get; set; }
+        public virtual User Author { get; set; }
 
         [Required]
         public string Content { get; set; }
 
         public DateTime Date { get; set; }
+
+        public int? ParentID { get; set; }
+
+        [ForeignKey("ParentID")]
+        public virtual Comment ParentComment { get; set; }
 
         public virtual ICollection<Comment> SubComments
         {

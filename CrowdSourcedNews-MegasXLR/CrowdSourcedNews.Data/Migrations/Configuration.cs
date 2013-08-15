@@ -13,7 +13,7 @@ namespace CrowdSourcedNews.Data.Migrations
             this.AutomaticMigrationDataLossAllowed = true;
         }
 
-        protected override void Seed(CrowdSourcedNews.Data.CrowdSourcedNewsContext context)
+        protected override void Seed(CrowdSourcedNewsContext context)
         {
             //  This method will be called after migrating to the latest version.
 

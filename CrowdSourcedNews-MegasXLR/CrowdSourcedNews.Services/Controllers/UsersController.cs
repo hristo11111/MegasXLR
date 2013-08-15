@@ -38,7 +38,7 @@
             User newUser = null;
             try
             {
-                UsersMapper.ToUserEntity(userToRegister);
+                newUser = UsersMapper.ToUserEntity(userToRegister);
             }
             catch (Exception)
             {
@@ -48,10 +48,12 @@
             usersRepository.Add(newUser);
 
             User inDbUser = this.usersRepository.GetByUsernameAndAuthCode(newUser.Username, newUser.AuthCode);
+            inDbUser.SessionKey = UserValidator.GenerateSessionKey(inDbUser.ID);
+            this.usersRepository.Update(inDbUser.ID, inDbUser);
             UserLoggedModel loggedUser = new UserLoggedModel()
                 {
                     Nickname = inDbUser.Nickname,
-                    SessionKey = UserValidator.GenerateSessionKey(inDbUser.ID)
+                    SessionKey = inDbUser.SessionKey
                 };
 
             HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created, loggedUser);

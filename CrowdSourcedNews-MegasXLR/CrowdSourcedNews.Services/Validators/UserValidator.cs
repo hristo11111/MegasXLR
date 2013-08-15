@@ -14,7 +14,7 @@
             "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM_1234567890";
         private const string ValidNicknameChars = 
             "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM_1234567890 -";
-        private const int MinUsernameNicknameChars = 6;
+        private const int MinUsernameNicknameChars = 4;
         private const int MaxUsernameNicknameChars = 30;
 
         private static Random RandomGenerator = new Random();

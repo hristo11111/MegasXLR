@@ -10,9 +10,15 @@ namespace CrowdSourcedNews.Services
         public static void Register(HttpConfiguration config)
         {
             config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
+                name: "NewsArticlesApi",
+                routeTemplate: "api/newsArticles/{id}/{action}/{sessionKey}",
+                defaults: new { controller = "newsArticles" }
+                );
+
+            config.Routes.MapHttpRoute(
+                name: "NewsApi",
+                routeTemplate: "api/{controller}/{action}/{sessionKey}",
+                defaults: new { sessionKey = RouteParameter.Optional }
             );
 
             // Uncomment the following line of code to enable query support for actions with an IQueryable or IQueryable<T> return type.
