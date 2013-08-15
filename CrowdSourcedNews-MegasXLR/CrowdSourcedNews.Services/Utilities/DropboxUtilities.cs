@@ -1,11 +1,11 @@
 ﻿namespace CrowdSourcedNews.Services.Utilities
 {
-    using System.Diagnostics;
-    using System.IO;
     using Spring.IO;
     using Spring.Social.Dropbox.Api;
     using Spring.Social.Dropbox.Connect;
     using Spring.Social.OAuth1;
+    using System.Diagnostics;
+    using System.IO;    
     
     internal static class DropboxUtilities
     {
@@ -24,6 +24,7 @@
             {
                 AuthorizeAppOAuth(dropboxServiceProvider);
             }
+
             OAuthToken oauthAccessToken = LoadOAuthToken();
 
             // Login in Dropbox
